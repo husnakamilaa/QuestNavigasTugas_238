@@ -38,15 +38,20 @@ fun DataApp(
                     OnFormulirBtnClick = {
                         navController.navigate(route = Navigasi.Formulir.name)
                     }
-                    OnBackBerandaBtnClick = {backToBeranda(navController)}
+                    OnBackToBeranda = {backToBeranda(navController)}
                 )
             }
             composable(route= Navigasi.Formulir.name) {
                 Formulir(
-                    onBackListDataBtnClick = {backToListData(navController)}
+                    OnBackToListData = {backToListData(navController)}
                 )
             }
         }
     }
 }
 
+private fun backToBeranda(
+    navController: NavController
+){
+    navController.popBackStack(route = com.example.navigasitugas.Navigasi.Beranda.name, inclusive = false)
+}
