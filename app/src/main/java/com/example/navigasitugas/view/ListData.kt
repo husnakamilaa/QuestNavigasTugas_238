@@ -34,7 +34,7 @@ import com.example.navigasitugas.R
 @Composable
 fun ListData(
     OnFormulirBtnClick:()-> Unit,
-    OnBackToBeranda:()->Unit
+    OnBackToBeranda:()-> Unit
 ) {
     val items = listOf(
         Pair(stringResource(R.string.nama_lengkap), "Aprilia Kurnianti"),
@@ -45,7 +45,7 @@ fun ListData(
     Scaffold(modifier = Modifier,
         topBar = {
             TopAppBar(
-                title = { Text(text = stringResource(R.string.list), color = Color.White) },
+                title = { Text(text =stringResource(R.string.list), color = Color.White) },
                 colors = TopAppBarDefaults.mediumTopAppBarColors(colorResource(R.color.purple_200))
             )
         }) { isiRuang->
