@@ -5,9 +5,12 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
@@ -18,6 +21,7 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.focus.focusModifier
 import androidx.compose.ui.graphics.Color
@@ -45,22 +49,25 @@ fun ListData(
     Scaffold(modifier = Modifier,
         topBar = {
             TopAppBar(
-                title = { Text(text =stringResource(R.string.list), color = Color.White) },
+                title = { Text(text =stringResource(R.string.list), color = Color.White, fontSize = 30.sp) },
                 colors = TopAppBarDefaults.mediumTopAppBarColors(colorResource(R.color.purple_200))
             )
         }) { isiRuang->
         Column(modifier = Modifier
+            .padding(top = 12.dp)
+            .fillMaxSize()
             .background(Color(0xFFE8D3ED))
             .padding(isiRuang),
             verticalArrangement = Arrangement.spacedBy(dimensionResource(R.dimen.padding_medium))) {
             items.forEach { item->
                     Card(modifier = Modifier
-                        .padding(all=16.dp),
-                        elevation = CardDefaults.cardElevation(defaultElevation = 10.dp),
+                        .fillMaxWidth()
+                        .padding(horizontal = 20.dp, vertical = 8.dp),
+                        elevation = CardDefaults.cardElevation(defaultElevation = 6.dp),
                         colors = CardDefaults.cardColors(
                             containerColor = Color.White))
                     {
-                        Column {
+                        Column(modifier = Modifier.padding(12.dp)) {
                             Text(text = item.first.uppercase(),
                                 fontSize = 16.sp)
                             Text(text = item.second,
@@ -74,16 +81,19 @@ fun ListData(
             }
             Spacer(modifier = Modifier.height(20.dp))
             Button(modifier = Modifier
-                .width(400.dp),
+                .width(350.dp)
+                .align(Alignment.CenterHorizontally),
+                shape = RoundedCornerShape(10.dp),
                 colors = ButtonDefaults.buttonColors(
                     containerColor = colorResource(R.color.purple_200)
                 ),
                 onClick = OnBackToBeranda) {
                 Text(text = stringResource(R.string.beranda))
             }
-            Spacer(modifier = Modifier.height(15.dp))
             Button(modifier = Modifier
-                .width(400.dp),
+                .width(350.dp)
+                .align(Alignment.CenterHorizontally),
+                shape = RoundedCornerShape(10.dp),
                 colors = ButtonDefaults.buttonColors(
                     containerColor = Color(0xFFDCA2E6)
                 ),
