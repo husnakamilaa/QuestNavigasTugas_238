@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -74,6 +75,9 @@ fun ListData(
             Spacer(modifier = Modifier.height(20.dp))
             Button(modifier = Modifier
                 .width(400.dp),
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = colorResource(R.color.purple_200)
+                ),
                 onClick = OnBackToBeranda) {
                 Text(text = stringResource(R.string.beranda))
             }
