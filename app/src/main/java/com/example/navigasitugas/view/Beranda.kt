@@ -46,6 +46,7 @@ fun Beranda(
                 contentDescription = null,
                 contentScale = ContentScale.Fit
             )
+            Spacer(modifier = Modifier.height(height = 30.dp))
         }
     }
 }
