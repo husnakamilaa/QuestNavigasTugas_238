@@ -6,6 +6,7 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
@@ -34,36 +35,39 @@ fun Beranda(
 ){
     Scaffold { isiRuang->
         val gambar = painterResource(id = R.drawable.pastry)
-        Column (modifier = Modifier.padding(isiRuang),
-            verticalArrangement = Arrangement.Top,
+        Column (modifier = Modifier.padding(isiRuang)
+            .fillMaxSize(),
+            verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally){
             Text(text = stringResource(R.string.welkam),
                 modifier = Modifier,
-                fontWeight = FontWeight.Bold,
                 fontFamily = FontFamily.Serif,
-                fontSize = 40.sp,
+                fontSize = 45.sp,
                 color = colorResource(R.color.purple_200)
             )
-            Spacer(modifier = Modifier.height(height = 30.dp))
+            Spacer(modifier = Modifier.height(height = 80.dp))
             Image(painter = gambar,
                 contentDescription = null,
-                contentScale = ContentScale.Fit
+                contentScale = ContentScale.Fit,
+                modifier = Modifier
+                    .width(240.dp)
+                    .height(180.dp)
             )
-            Spacer(modifier = Modifier.height(height = 30.dp))
+            Spacer(modifier = Modifier.height(height = 80.dp))
             Text(text = stringResource(R.string.namaku),
                 modifier = Modifier,
                 fontFamily = FontFamily.Serif,
-                fontSize = 30.sp,
+                fontSize = 25.sp,
                 color = colorResource(R.color.purple_200),
                 )
             Spacer(modifier = Modifier.height(height = 5.dp))
             Text(text = stringResource(R.string.nimku),
                 modifier = Modifier,
                 fontFamily = FontFamily.Serif,
-                fontSize = 20.sp,
+                fontSize = 15.sp,
                 color = colorResource(R.color.black),
             )
-            Spacer(modifier = Modifier.height(height = 30.dp))
+            Spacer(modifier = Modifier.height(height = 80.dp))
             Button(modifier = Modifier
                 .width(280.dp),
                 onClick = OnListDataBtnClick,
