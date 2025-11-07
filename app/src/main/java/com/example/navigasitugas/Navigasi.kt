@@ -55,3 +55,9 @@ private fun backToBeranda(
 ){
     navController.popBackStack(route = com.example.navigasitugas.Navigasi.Beranda.name, inclusive = false)
 }
+
+private fun backToListData(
+    navController: NavController
+){
+    navController.popBackStack(route = com.example.navigasitugas.Navigasi.ListData.name, inclusive = false)
+}
